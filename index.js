@@ -15,7 +15,7 @@ function makeRecord(record) {
 }
 
 function lsof(params) {
-  let stdout
+  let stdout;
   try {
     stdout = execSync("lsof " + params).toString();
   } catch(err) {
