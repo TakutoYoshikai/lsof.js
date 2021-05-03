@@ -24,7 +24,7 @@ function lsof(params) {
       return value !== "";
     }));
   });
-  console.log(records);
+  return records;
 }
 
 module.exports = lsof;
