@@ -15,7 +15,12 @@ function makeRecord(record) {
 }
 
 function lsof(params) {
-  const stdout = execSync("lsof " + params).toString();
+  let stdout
+  try {
+    stdout = execSync("lsof " + params).toString();
+  } catch(err) {
+    return [];
+  }
   const lines = stdout.split("\n");
   lines.splice(0, 1);
   lines.splice(lines.length - 1, 1);
